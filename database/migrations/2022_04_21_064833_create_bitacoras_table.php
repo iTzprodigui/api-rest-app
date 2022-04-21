@@ -15,7 +15,12 @@ return new class extends Migration
     {
         Schema::create('bitacoras', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->integer('idDocente')->unsigned();
+            $table->integer('idAlumno')->unsigned();
+            $table->date('fecha');
+            $table->string('anotacion');
+            $table->foreign('idDocente')->references('id')->on('docentes')->onDelate('cascade');
+            $table->foreign('idAlumno')->references('id')->on('alumnos')->onDelate('cascade');
         });
     }
 

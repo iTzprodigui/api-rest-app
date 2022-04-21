@@ -15,7 +15,11 @@ return new class extends Migration
     {
         Schema::create('pagos', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->integer('idAlumno')->unsigned();
+            $table->date('fecha');
+            $table->string('concepto');
+            $table->integer('pago');
+            $table->foreign('idAlumno')->references('id')->on('alumnos')->onDelate('cascade');
         });
     }
 
