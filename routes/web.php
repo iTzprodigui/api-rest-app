@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AlumnoController;
+use App\Http\Controllers\PagoController;
+use App\Http\Controllers\DocenteController;
+use App\Http\Controllers\BitacoraController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +21,9 @@ Route::get('/', function () {
 });
 
 Route::resource('alumnos', AlumnoController::class);
+Route::resource('pagos', PagoController::class);
+Route::resource('docentes', DocenteController::class);
+Route::resource('bitacoras', BitacoraController::class);
 
 Auth::routes();
 

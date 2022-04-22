@@ -3,6 +3,9 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AlumnoController;
+use App\Http\Controllers\PagoController;
+use App\Http\Controllers\DocenteController;
+use App\Http\Controllers\BitacoraController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +23,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('alumnos', AlumnoController::class);
+Route::apiResource('pagos', PagoController::class);
+Route::apiResource('docentes', DocenteController::class);
+Route::apiResource('bitacoras', BitacoraController::class);
